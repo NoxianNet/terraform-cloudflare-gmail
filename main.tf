@@ -27,3 +27,4 @@ resource "cloudflare_record" "spf" {
   ttl     = var.ttl
   zone_id = var.zone_id
 }
+
