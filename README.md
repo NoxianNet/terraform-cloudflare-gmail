@@ -1,13 +1,15 @@
 <!-- BEGIN_TF_DOCS -->
 ## Requirements
 
-No requirements.
+| Name | Version |
+|------|---------|
+| <a name="requirement_cloudflare"></a> [cloudflare](#requirement\_cloudflare) | >= 4.8.0 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| <a name="provider_cloudflare"></a> [cloudflare](#provider\_cloudflare) | n/a |
+| <a name="provider_cloudflare"></a> [cloudflare](#provider\_cloudflare) | >= 4.8.0 |
 
 ## Modules
 
@@ -17,8 +19,8 @@ No modules.
 
 | Name | Type |
 |------|------|
-| [cloudflare_record.mx](https://registry.terraform.io/providers/hashicorp/cloudflare/latest/docs/resources/record) | resource |
-| [cloudflare_record.spf](https://registry.terraform.io/providers/hashicorp/cloudflare/latest/docs/resources/record) | resource |
+| [cloudflare_record.mx](https://registry.terraform.io/providers/cloudflare/cloudflare/latest/docs/resources/record) | resource |
+| [cloudflare_record.spf](https://registry.terraform.io/providers/cloudflare/cloudflare/latest/docs/resources/record) | resource |
 
 ## Inputs
 
