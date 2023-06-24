@@ -1,8 +1,3 @@
-variable "domain" {
-  description = "The domain to apply the MX records to"
-  type        = string
-}
-
 variable "zone_id" {
   description = "The Cloudflare Zone ID"
   type        = string
