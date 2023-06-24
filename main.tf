@@ -1,29 +1,18 @@
-locals {
-  mx_server_domains = [
-    "aspmx.l.google.com",
-    "alt1.aspmx.l.google.com",
-    "alt2.aspmx.l.google.com",
-    "alt3.aspmx.l.google.com",
-    "alt4.aspmx.l.google.com",
-  ]
-}
-
 resource "cloudflare_record" "mx" {
-  count    = length(local.mx_server_domains)
-  domain   = var.domain
-  name     = var.sub_domain
-  value    = local.mx_server_domains[count.index]
-  priority = count.index + 1
-  type     = "MX"
-  ttl      = var.ttl
+  for_each = {for idx, i in var.mx_records : idx => i}
   zone_id  = var.zone_id
+  domain   = var.domain
+  name     = each.value.name
+  value    = each.value.value
+  type     = "MX"
+  priority = each.value.priority
+  ttl      = each.value.ttl
 }
 
-resource "cloudflare_record" "spf" {
-  domain  = var.domain
-  name    = var.sub_domain
-  type    = "TXT"
-  value   = "v=spf1 include:_spf.google.com ~all"
-  ttl     = var.ttl
+resource "cloudflare_record" "googleworkspace_spf_record" {
   zone_id = var.zone_id
+  type    = "TXT"
+  name    = "@"
+  value   = "v=spf1 include:_spf.google.com ~all"
+  ttl     = 3600
 }
