@@ -16,3 +16,4 @@ resource "cloudflare_record" "googleworkspace_spf_record" {
   value   = "v=spf1 include:_spf.google.com ~all"
   ttl     = 3600
 }
+
