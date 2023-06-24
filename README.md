@@ -31,8 +31,5 @@ No modules.
 
 ## Outputs
 
-| Name | Description |
-|------|-------------|
-| <a name="output_creation_date"></a> [creation\_date](#output\_creation\_date) | Creation date of the record |
-| <a name="output_mx_domain"></a> [mx\_domain](#output\_mx\_domain) | The domain of the mx records. |
+No outputs.
 <!-- END_TF_DOCS -->
