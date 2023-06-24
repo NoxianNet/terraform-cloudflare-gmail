@@ -2,7 +2,7 @@ resource "cloudflare_record" "mx" {
   for_each = {for idx, i in var.mx_records : idx => i}
   zone_id  = var.zone_id
   name     = each.value.name
-  value    = each.value.value
+  value    = lower(each.value.value)
   type     = "MX"
   priority = each.value.priority
   ttl      = each.value.ttl
